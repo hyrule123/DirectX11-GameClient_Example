@@ -4,6 +4,7 @@
 #include <Contents/ContentsClassInitializer.h>
 
 inline void DebugCheck(long _block);
+
 BOOL APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPWSTR    lpCmdLine,
@@ -33,9 +34,11 @@ BOOL APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 inline void DebugCheck(long _block)
 {
+#ifdef _DEBUG
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
     if (_block)
     {
         _CrtSetBreakAlloc(_block);
     }
+#endif // _DEBUG
 }
