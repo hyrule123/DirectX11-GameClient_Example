@@ -386,7 +386,7 @@ FodyWeavers.xsd
 External/
 
 # Exclude Resources
-Res/
+# Res/
 
 # Exclude Shader header
 CompiledShaderHeader/

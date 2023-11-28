@@ -1,0 +1,34 @@
+{
+	"FBX Converter" : 
+	{
+		"mbEnable" : false
+	},
+	"GameObject Inspector" : 
+	{
+		"mbEnable" : true
+	},
+	"GameObject Viewer" : 
+	{
+		"mbEnable" : true
+	},
+	"Graphics Shader Editor" : 
+	{
+		"mbEnable" : false
+	},
+	"Material Editor" : 
+	{
+		"mbEnable" : false
+	},
+	"Normal Converter" : 
+	{
+		"mbEnable" : false
+	},
+	"Resource Viewer" : 
+	{
+		"mbEnable" : false
+	},
+	"UV Calculator" : 
+	{
+		"mbEnable" : false
+	}
+}
