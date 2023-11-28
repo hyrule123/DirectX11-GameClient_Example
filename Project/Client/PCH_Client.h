@@ -2,14 +2,14 @@
 #ifndef PCH_CLIENT
 #define PCH_CLIENT
 
-#include <Contents/PCH_Contents.h>
+#include <UserContents/PCH_UserContents.h>
 
 #ifdef _WIN64
 
 #ifdef _DEBUG
-#pragma comment(lib, "Contents/x64/Debug/Contents.lib")
+#pragma comment(lib, "UserContents/x64/Debug/UserContents.lib")
 #else _DEBUG
-#pragma comment(lib, "Contents/x64/Release/Contents.lib")
+#pragma comment(lib, "UserContents/x64/Release/UserContents.lib")
 #endif _DEBUG
 
 #else _WIN64
