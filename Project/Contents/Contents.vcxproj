@@ -72,36 +72,36 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IntDir>$(SolutionDir)Output\Obj\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir>$(SolutionDir)BinObj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetExt>.lib</TargetExt>
-    <OutDir>$(SolutionDir)External\Lib\$(ProjectName)\$(Configuration)\</OutDir>
-    <LibraryPath>$(SolutionDir)External\Lib\;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
-    <ExternalIncludePath>$(SolutionDir)External\Include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
-    <IncludePath>..\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <OutDir>$(SolutionDir)External\lib\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>..;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <ExternalIncludePath>$(SolutionDir)External\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
+    <LibraryPath>$(SolutionDir)External\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IntDir>$(SolutionDir)Output\Obj\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir>$(SolutionDir)BinObj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetExt>.lib</TargetExt>
-    <OutDir>$(SolutionDir)External\Lib\$(ProjectName)\$(Configuration)\</OutDir>
-    <LibraryPath>$(SolutionDir)External\Lib\;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
-    <ExternalIncludePath>$(SolutionDir)External\Include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
-    <IncludePath>..\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <OutDir>$(SolutionDir)External\lib\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>..;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <ExternalIncludePath>$(SolutionDir)External\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
+    <LibraryPath>$(SolutionDir)External\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IntDir>$(SolutionDir)Output\Obj\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir>$(SolutionDir)BinObj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetExt>.lib</TargetExt>
-    <OutDir>$(SolutionDir)External\$(ProjectName)\lib\$(Configuration)\</OutDir>
-    <LibraryPath>$(SolutionDir)External;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
-    <ExternalIncludePath>$(SolutionDir)External;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
-    <IncludePath>..;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)External\lib\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>..;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <ExternalIncludePath>$(SolutionDir)External\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
+    <LibraryPath>$(SolutionDir)External\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IntDir>$(SolutionDir)Output\Obj\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir>$(SolutionDir)BinObj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetExt>.lib</TargetExt>
-    <OutDir>$(SolutionDir)External\$(ProjectName)\lib\$(Configuration)\</OutDir>
-    <LibraryPath>$(SolutionDir)External;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
-    <ExternalIncludePath>$(SolutionDir)External;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
-    <IncludePath>..;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)External\lib\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>..;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <ExternalIncludePath>$(SolutionDir)External\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
+    <LibraryPath>$(SolutionDir)External\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -123,7 +123,7 @@
     </Link>
     <PreBuildEvent>
       <Command>cd $(SolutionDir)
-start CodeGenerator_$(Configuration).exe</Command>
+start CodeGenerator_$(Platform)_$(Configuration).exe Script Scene</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -150,7 +150,7 @@ start CodeGenerator_$(Configuration).exe</Command>
     </Link>
     <PreBuildEvent>
       <Command>cd $(SolutionDir)
-start CodeGenerator_$(Configuration).exe</Command>
+start CodeGenerator_$(Platform)_$(Configuration).exe Script Scene</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -173,7 +173,7 @@ start CodeGenerator_$(Configuration).exe</Command>
     </Link>
     <PreBuildEvent>
       <Command>cd $(SolutionDir)
-start CodeGenerator_$(Configuration).exe Script Scene</Command>
+start CodeGenerator_$(Platform)_$(Configuration).exe Script Scene</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -200,7 +200,7 @@ start CodeGenerator_$(Configuration).exe Script Scene</Command>
     </Link>
     <PreBuildEvent>
       <Command>cd $(SolutionDir)
-start CodeGenerator_$(Configuration).exe Script Scene</Command>
+start CodeGenerator_$(Platform)_$(Configuration).exe Script Scene</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

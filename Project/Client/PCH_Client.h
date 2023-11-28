@@ -4,10 +4,16 @@
 
 #include <Contents/PCH_Contents.h>
 
+#ifdef _WIN64
+
 #ifdef _DEBUG
-#pragma comment(lib, "Contents/lib/Debug/Contents.lib")
-#else 
-#pragma comment(lib, "Contents/lib/Release/Contents.lib")
+#pragma comment(lib, "Contents/x64/Debug/Contents.lib")
+#else _DEBUG
+#pragma comment(lib, "Contents/x64/Release/Contents.lib")
+#endif _DEBUG
+
+#else _WIN64
+#error "64비트만 지원"
 #endif
 
 #include "targetver.h"
