@@ -388,9 +388,6 @@ External/
 # Exclude Resources
 Res/
 
-# Submodule directory
-EngineBase/
-
 # Exclude Shader header
 CompiledShaderHeader/
 
