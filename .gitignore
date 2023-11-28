@@ -30,7 +30,10 @@ x86/
 bld/
 [Oo]bj/
 [Oo]ut/
-[Oo]utput/
+# [Oo]utput/
+Debug/
+Release/
+
 [Ll]og/
 [Ll]ogs/
 
@@ -385,9 +388,10 @@ FodyWeavers.xsd
 External/
 
 # Exclude Resources
-Res/
+# Res/
 
-
+# Submodule directory
+EngineBase/
 
 # Exclude Shader header
 CompiledShaderHeader/
