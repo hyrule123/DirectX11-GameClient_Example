@@ -398,3 +398,6 @@ CompiledShaderHeader/
 *.fbx
 *.blend
 FBX/
+
+# text file
+*.txt
