@@ -12,7 +12,7 @@ echo Running %0...
 echo Mode: %Platform%, %Configuration%
 
 set SRC=.\Project\Engine\DefaultShader\*.hlsli
-set DEST=.\Project\Shader\DefaultShader
+set DEST=.\Project\UserShader\DefaultShader
 
 if exist %SRC% (
     if not exist %DEST% ( mkdir %DEST% )
