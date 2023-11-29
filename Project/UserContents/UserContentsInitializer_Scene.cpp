@@ -7,7 +7,7 @@
 
 #include "PCH_UserContents.h"
 
-#include "ContentsClassInitializer.h"
+#include "UserContentsInitializer.h"
 #include <EngineBase/Engine/SceneMgr.h>
 #include "strKey_Scene.h"
 
@@ -19,7 +19,7 @@
 namespace ehw
 {
 	using namespace ehw::define;
-	void ContentsClassInitializer::InitScene()
+	void UserContentsInitializer::InitScene()
 	{
 		CONSTRUCTOR_T(Scene_Title);
 	}

@@ -1,13 +1,14 @@
 
 namespace ehw
 {
-	class ContentsClassInitializer
+	class UserContentsInitializer
 	{
 	public:
 		static void Init();
 
 	private:
-		//이 2개는 Code Generator에 의해 자동 생성됨.
+		//이 3개는 Code Generator에 의해 자동 생성됨.
+		static void InitUserComponent();
 		static void InitScript();
 		static void InitScene();
 

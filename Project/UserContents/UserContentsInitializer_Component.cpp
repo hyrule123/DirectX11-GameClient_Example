@@ -7,18 +7,18 @@
 
 #include "PCH_UserContents.h"
 
-#include "ContentsClassInitializer.h"
+#include "UserContentsInitializer.h"
 #include <EngineBase/Engine/ComMgr.h>
-#include "strKey_Script.h"
+#include "strKey_UserComponent.h"
 
 
 
-#define CONSTRUCTOR_T(T) ComMgr::AddComConstructor<T>(strKey::Script::##T)
+#define CONSTRUCTOR_T(T) ComMgr::AddComConstructor<T>(strKey::com::##T)
 
 namespace ehw
 {
 	using namespace ehw::define;
-	void ContentsClassInitializer::InitScript()
+	void UserContentsInitializer::InitUserComponent()
 	{
 	}
 }
