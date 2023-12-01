@@ -46,7 +46,7 @@ namespace ehw
 			tr->SetRelativePos(float3(0.0f, 0.0f, -20.0f));
 
 			Com_Camera* cameraComp = cameraObj->AddComponent<Com_Camera>();
-			cameraComp->SetProjectionType(define::eProjectionType::Perspective);
+			cameraComp->SetProjectionType(eProjectionType::Perspective);
 
 			//cameraObj->AddComponent(strKey::Script::Script_CameraMove);
 			//cameraObj->AddComponent(strKey::Script::Script_UIBase);
