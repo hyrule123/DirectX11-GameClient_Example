@@ -1,29 +1,26 @@
-#include "PCH_UserContents.h"
 #include "Scene_Title.h"
 
-#include <EngineBase/Engine/ResourceMgr.h>
-#include <EngineBase/Engine/Com_Transform.h>
-#include <EngineBase/Engine/Com_Renderer_Mesh.h>
-#include <EngineBase/Engine/RenderMgr.h>
-#include <EngineBase/Engine/Texture.h>
-#include <EngineBase/Engine/Com_Camera.h>
-#include <EngineBase/Engine/Com_Renderer_Sprite.h>
-#include <EngineBase/Engine/GridScript.h>
-#include <EngineBase/Engine/Object.h>
-#include <EngineBase/Engine/InputMgr.h>
-#include <EngineBase/Engine/ICollider2D.h>
-#include <EngineBase/Engine/CollisionMgr.h>
-#include <EngineBase/Engine/Com_Animator2D.h>
-#include <EngineBase/Engine/Com_Light3D.h>
-#include <EngineBase/Engine/Com_Animator3D.h>
-#include <EngineBase/Engine/Com_Renderer_ParticleSystem.h>
-#include <EngineBase/Engine/Prefab.h>
-#include <EngineBase/Engine/Com_Renderer_UIBase.h>
+#include <Engine/Manager/ResourceManager.h>
+#include <Engine/Manager/RenderManager.h>
+#include <Engine/Game/Component/Transform/Com_Transform.h>
+#include <Engine/Game/Component/Renderer/Com_Renderer_Mesh.h>
+#include <Engine/Resource/Texture.h>
+#include <Engine/Game/Component/Camera/Com_Camera.h>
+#include <Engine/Game/Component/Renderer/Com_Renderer_Sprite.h>
+#include <Engine/Game/Component/Script/GridScript.h>
+#include <Engine/Manager/InputManager.h>
+#include <Engine/Game/Component/Collider/ICollider2D.h>
+#include <Engine/Manager/CollisionManager.h>
+#include <Engine/Game/Component/Animator/Com_Animator2D.h>
+#include <Engine/Game/Component/Light/Com_Light3D.h>
+#include <Engine/Game/Component/Animator/Com_Animator3D.h>
+#include <Engine/Game/Component/Renderer/Com_Renderer_ParticleSystem.h>
+#include <Engine/Resource/Prefab.h>
+#include <Engine/Game/Component/Renderer/Com_Renderer_UIBase.h>
 
-#include "strKey_Script.h"
+#include "../strKey_Script.h"
+#include "../strKey_UserComponent.h"
 
-
-#include <EngineBase/Engine/EventMgr.h>
 
 namespace ehw
 {
@@ -33,13 +30,12 @@ namespace ehw
 	Scene_Title::~Scene_Title()
 	{
 	}
-	void Scene_Title::Init()
+	void Scene_Title::OnEnter()
 	{
-		IScene::Init();
 
 		{
 			// Main Com_Camera Game Object
-			GameObject* cameraObj = EventMgr::SpawnGameObject(eLayerType::Com_Camera);
+			GameObject* cameraObj = NewGameObject(eLayerType::Com_Camera);
 			cameraObj->SetName("MainCamera");
 
 			Com_Transform* tr = cameraObj->AddComponent<Com_Transform>();
@@ -52,11 +48,11 @@ namespace ehw
 			//cameraObj->AddComponent(strKey::Script::Script_UIBase);
 
 
-			RenderMgr::SetMainCamera(cameraComp);
+			RenderManager::SetMainCamera(cameraComp);
 		}
 
 		{
-			GameObject* dirLight = EventMgr::SpawnGameObject(eLayerType::Player);
+			GameObject* dirLight = NewGameObject(eLayerType::Player);
 			dirLight->AddComponent<Com_Transform>();
 
 			Com_Light3D* light3d = dirLight->AddComponent<Com_Light3D>();
@@ -66,7 +62,7 @@ namespace ehw
 		}
 
 		{
-			GameObject* dirLight = EventMgr::SpawnGameObject(eLayerType::Player);
+			GameObject* dirLight = NewGameObject(eLayerType::Player);
 			dirLight->AddComponent<Com_Transform>();
 			dirLight->SetName("Point1000");
 
@@ -78,7 +74,7 @@ namespace ehw
 		}
 
 		{
-			GameObject* dirLight = EventMgr::SpawnGameObject(eLayerType::Player);
+			GameObject* dirLight = NewGameObject(eLayerType::Player);
 			dirLight->AddComponent<Com_Transform>();
 			dirLight->SetName("Point500");
 
@@ -87,35 +83,32 @@ namespace ehw
 			light3d->SetRadius(500.f);
 
 			light3d->SetDiffuse(float4(0.7f, 0.7f, 0.7f, 1.f));
-			
+
 			light3d->SetAmbient(float4(0.3f, 0.3f, 0.3f, 1.f));
 		}
 
 
 		{
-			GameObject* player = EventMgr::SpawnGameObject(eLayerType::Player);
+			GameObject* player = NewGameObject(eLayerType::Player);
+			player->SetName("TestObj");
+
+			//player->AddComponent()
 			//player->AddComponent<Script_Player>();
 
-			
+
 			//GameObject* modeling = meshdata->Instantiate(eLayerType::Player);
 		}
 	}
 	void Scene_Title::Update()
 	{
-		IScene::Update();
+		iScene::Update();
 	}
-	void Scene_Title::FixedUpdate()
-	{
-		IScene::FixedUpdate();
-	}
+
 	void Scene_Title::Render()
 	{
-		IScene::Render();
+		iScene::Render();
 	}
-	void Scene_Title::OnEnter()
-	{
 
-	}
 	void Scene_Title::OnExit()
 	{
 	}

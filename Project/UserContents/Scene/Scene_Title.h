@@ -1,20 +1,18 @@
 #pragma once
-#include <EngineBase/Engine/IScene.h>
+#include <Engine/Game/iScene.h>
 
 namespace ehw
 {
-	class Scene_Title : public IScene
+	class Scene_Title : public iScene
 	{
 	public:
 		Scene_Title();
 		virtual ~Scene_Title();
 
-		virtual void Init() override;
+		virtual void OnEnter() override;
 		virtual void Update() override;
-		virtual void FixedUpdate() override;
 		virtual void Render() override;
 
-		virtual void OnEnter() override;
 		virtual void OnExit() override;
 
 	private:

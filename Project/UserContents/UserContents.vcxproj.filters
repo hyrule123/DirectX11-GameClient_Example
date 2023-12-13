@@ -1,17 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Scene_Title.cpp" />
-    <ClCompile Include="PCH_Contents.cpp" />
+    <ClCompile Include="Scene\Scene_Title.cpp" />
     <ClCompile Include="PCH_Contents.cpp" />
     <ClCompile Include="PCH_Contents.cpp" />
     <ClCompile Include="PCH_Contents.cpp" />
     <ClCompile Include="UserContentsInitializer.cpp" />
     <ClCompile Include="PCH_Contents.cpp" />
     <ClCompile Include="Scene_Title.cpp" />
-    <ClCompile Include="ContentsClassInitializer.cpp" />
-    <ClCompile Include="ContentsClassInitializer_Scene.cpp" />
-    <ClCompile Include="ContentsClassInitializer_Script.cpp" />
     <ClCompile Include="PCH_Contents.cpp" />
     <ClCompile Include="Scene_Title.cpp" />
     <ClCompile Include="ContentsClassInitializer.cpp" />
@@ -78,9 +74,7 @@
     <ClCompile Include="ContentsClassInitializer_Scene.cpp" />
     <ClCompile Include="ContentsClassInitializer_Script.cpp" />
     <ClCompile Include="PCH_Contents.cpp" />
-    <ClCompile Include="Scene_Play.cpp" />
     <ClCompile Include="Scene_Title.cpp" />
-    <ClCompile Include="Script_CameraMove.cpp" />
     <ClCompile Include="ContentsClassInitializer_Scene.cpp" />
     <ClCompile Include="ContentsClassInitializer_Script.cpp" />
     <ClCompile Include="PCH_Contents.cpp" />
@@ -97,7 +91,11 @@
     <ClCompile Include="ContentsClassInitializer_Script.cpp" />
     <ClCompile Include="PCH_UserContents.cpp" />
     <ClCompile Include="Scene_Title.cpp" />
-    <ClCompile Include="*.cpp" />
+    <ClCompile Include="Scene_Title.cpp" />
+    <ClCompile Include="UserContentsInitializer.cpp" />
+    <ClCompile Include="UserContentsInitializer_Component.cpp" />
+    <ClCompile Include="UserContentsInitializer_Scene.cpp" />
+    <ClCompile Include="UserContentsInitializer_Script.cpp" />
     <ClCompile Include="*.cpp" />
     <ClCompile Include="*.cpp">
       <Filter>Init</Filter>
@@ -190,8 +188,9 @@
     <ClInclude Include="PCH_UserContents.h">
       <Filter>PCH</Filter>
     </ClInclude>
-    <ClInclude Include="Scene_Title.h" />
+    <ClInclude Include="Scene\Scene_Title.h" />
     <ClInclude Include="UserContentsInitializer.h" />
+    <ClInclude Include="strKey_UserComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Auto Generated">
@@ -202,26 +201,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="strKey_Script.txt">
-      <Filter>Auto Generated</Filter>
-    </Text>
-    <Text Include="strKey_Scene.txt">
-      <Filter>Auto Generated</Filter>
-    </Text>
-    <Text Include="strKey_Shader.txt">
-      <Filter>Auto Generated</Filter>
-    </Text>
-    <Text Include="strKey_UserComponent.txt">
-      <Filter>Auto Generated</Filter>
-    </Text>
-    <Text Include="UserContentsInitializer_Component.txt">
-      <Filter>Auto Generated</Filter>
-    </Text>
-    <Text Include="UserContentsInitializer_Scene.txt">
-      <Filter>Auto Generated</Filter>
-    </Text>
-    <Text Include="UserContentsInitializer_Script.txt">
-      <Filter>Auto Generated</Filter>
-    </Text>
+    <Text Include="FoundScenes.txt" />
+    <Text Include="FoundScripts.txt" />
+    <Text Include="FoundUserComponents.txt" />
   </ItemGroup>
 </Project>
