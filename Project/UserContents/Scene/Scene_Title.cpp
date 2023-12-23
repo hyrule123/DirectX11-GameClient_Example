@@ -35,7 +35,7 @@ namespace ehw
 
 		{
 			// Main Com_Camera Game Object
-			GameObject* cameraObj = NewGameObject(eLayerType::Com_Camera);
+			const auto& cameraObj = NewGameObject(eLayerType::Com_Camera);
 			cameraObj->SetName("MainCamera");
 
 			const auto& tr = cameraObj->AddComponent<Com_Transform>();
@@ -52,7 +52,8 @@ namespace ehw
 		}
 
 		{
-			GameObject* dirLight = NewGameObject(eLayerType::Player);
+			
+			const std::shared_ptr<GameObject>& dirLight = NewGameObject(eLayerType::Player);
 			dirLight->AddComponent<Com_Transform>();
 
 			const auto& light3d = dirLight->AddComponent<Com_Light3D>();
@@ -62,11 +63,11 @@ namespace ehw
 		}
 
 		{
-			GameObject* dirLight = NewGameObject(eLayerType::Player);
+			const std::shared_ptr<GameObject>& dirLight = NewGameObject(eLayerType::Player);
 			dirLight->AddComponent<Com_Transform>();
 			dirLight->SetName("Point1000");
 
-			Com_Light3D* light3d = dirLight->AddComponent<Com_Light3D>();
+			const auto& light3d = dirLight->AddComponent<Com_Light3D>();
 			light3d->SetLightType(eLightType::Point);
 			light3d->SetRadius(1000.f);
 			light3d->SetDiffuse(float4(0.3f, 0.3f, 0.3f, 1.f));
@@ -74,11 +75,11 @@ namespace ehw
 		}
 
 		{
-			GameObject* dirLight = NewGameObject(eLayerType::Player);
+			const std::shared_ptr<GameObject>& dirLight = NewGameObject(eLayerType::Player);
 			dirLight->AddComponent<Com_Transform>();
 			dirLight->SetName("Point500");
 
-			Com_Light3D* light3d = dirLight->AddComponent<Com_Light3D>();
+			const auto& light3d = dirLight->AddComponent<Com_Light3D>();
 			light3d->SetLightType(eLightType::Point);
 			light3d->SetRadius(500.f);
 
@@ -89,14 +90,14 @@ namespace ehw
 
 
 		{
-			GameObject* player = NewGameObject(eLayerType::Player);
+			const std::shared_ptr<GameObject>& player = NewGameObject(eLayerType::Player);
 			player->SetName("TestObj");
 
 			//player->AddComponent()
 			//player->AddComponent<Script_Player>();
 
 
-			//GameObject* modeling = meshdata->Instantiate(eLayerType::Player);
+			//const std::shared_ptr<GameObject>& modeling = meshdata->Instantiate(eLayerType::Player);
 		}
 	}
 	void Scene_Title::Update()
