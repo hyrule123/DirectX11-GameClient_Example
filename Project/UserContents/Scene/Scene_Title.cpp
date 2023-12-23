@@ -38,10 +38,10 @@ namespace ehw
 			GameObject* cameraObj = NewGameObject(eLayerType::Com_Camera);
 			cameraObj->SetName("MainCamera");
 
-			Com_Transform* tr = cameraObj->AddComponent<Com_Transform>();
+			const auto& tr = cameraObj->AddComponent<Com_Transform>();
 			tr->SetRelativePos(float3(0.0f, 0.0f, -20.0f));
 
-			Com_Camera* cameraComp = cameraObj->AddComponent<Com_Camera>();
+			const auto& cameraComp = cameraObj->AddComponent<Com_Camera>();
 			cameraComp->SetProjectionType(eProjectionType::Perspective);
 
 			//cameraObj->AddComponent(strKey::Script::Script_CameraMove);
@@ -55,7 +55,7 @@ namespace ehw
 			GameObject* dirLight = NewGameObject(eLayerType::Player);
 			dirLight->AddComponent<Com_Transform>();
 
-			Com_Light3D* light3d = dirLight->AddComponent<Com_Light3D>();
+			const auto& light3d = dirLight->AddComponent<Com_Light3D>();
 			light3d->SetLightType(eLightType::Directional);
 			light3d->SetDiffuse(float4(0.3f, 0.3f, 0.3f, 1.f));
 			light3d->SetAmbient(float4(0.3f, 0.3f, 0.3f, 1.f));
